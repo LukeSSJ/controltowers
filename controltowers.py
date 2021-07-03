@@ -25,14 +25,14 @@ with open('data.csv', 'w', newline='') as f:
 		offset = 0
 		
 		while True:
-			offset = body.find("<tr ", offset)
+			offset = body.find("<tr", offset)
 			if offset == -1:
 				break
 			row_end = body.find("</tr>", offset)
 			row_html = body[offset:row_end]
 			cell_offset = 0
 			while True:
-				cell_offset = row_html.find("<td ", cell_offset)
+				cell_offset = row_html.find("<td", cell_offset)
 				if cell_offset == -1:
 					offset = row_end
 					break
